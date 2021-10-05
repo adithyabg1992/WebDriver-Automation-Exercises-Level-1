@@ -119,8 +119,11 @@ public class AutomationDriver {
 		String parent = it.next();
 		String child = it.next();
 		driver.switchTo().window(child);
+		
 		System.out.println(
 		driver.findElement(By.xpath("//h3[contains(text(),'An Academy to learn Everything about Testing')]")).getText());
+		Thread.sleep(5000);
+		driver.close();
 		driver.switchTo().window(parent);
 		System.out.println(driver.findElement(By.xpath("//h1[contains(text(),'Practice Page')]")).getText());
 		Thread.sleep(2000);
